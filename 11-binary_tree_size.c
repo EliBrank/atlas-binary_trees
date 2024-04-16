@@ -8,5 +8,11 @@
  */
 size_t binary_tree_size(const binary_tree_t *tree)
 {
+	/* base case */
+	if (tree == NULL)
+		return (0);
 
+	/* adds 1 for each recursive call that doesn't hit NULL */
+	return (1 + binary_tree_size(tree->left) +
+				binary_tree_size(tree->right));
 }
